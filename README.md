@@ -8,7 +8,6 @@
 ## Chapter 1: How to Docker
 - Install docker, docker-machine and virtualbox
 
-
 ## Chapter 2: Dockerfiles
 ## Chapter 3: Bonus part
 
