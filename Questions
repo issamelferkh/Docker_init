@@ -1,10 +1,11 @@
 - Q25 Lst all services on local swarm -> ```docker service ls```: where is swarm ???
 - Q11 how to identify volume size ?
-- container vs machine vs volume vs composer vs swarm sv node vs images???
+- container vs volume vs composer vs images???
 - image VS container ???
 - Q12 --restart=on-failure:10, why 10 value?
 - Q12 is not same root pwd !!!
 - Q12 restart is not same => always vs on-failure !!!
+
 - Q18 restart count -> docker inspect -f '{{.RestartCount}}' overlord > don't increment
 - Q19 re-faire !!!
 - Q22 re-faire !!!
@@ -15,4 +16,8 @@
 - Q19 to Q34 re-faire !!!
 
 
+docker run VS docker pull VS docker build ?
 
+
+docker pull --------------> image not container
+docker run ---------------> now is a container
