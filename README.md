@@ -23,6 +23,8 @@ First project on the Docker ecosystem. Learn to think in containers for this sub
 
 ### Chapter 1: How to Docker
 - Introduction to Docker and its main options.
+- Deployed Wordpress with Docker
+- The Swarm
 
 ### Chapter 2: Dockerfiles
 - Create your owm containers for your own applications

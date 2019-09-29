@@ -1,12 +1,18 @@
 - Q25 Lst all services on local swarm -> ```docker service ls```: where is swarm ???
+- Q11 how to identify volume size ?
+- container vs machine vs volume vs composer vs swarm sv node vs images???
+- image VS container ???
+- Q12 --restart=on-failure:10, why 10 value?
+- Q12 is not same root pwd !!!
+- Q12 restart is not same => always vs on-failure !!!
+- Q18 restart count -> docker inspect -f '{{.RestartCount}}' overlord > don't increment
+- Q19 re-faire !!!
+- Q22 re-faire !!!
+
+- ex01 how to test teamspeak client server ???
+- ex02 re-faire !!! + créer une application Rails ???
+
+- Q19 to Q34 re-faire !!!
 
 
 
-
-
-From the shell of a debian container, 
-install via the container’s package manager everything you need to 
-compile C source code 
-push it onto a git repo 
-package manager + packages already in the container are updated
-For this exercise, you should only specify the commands to be run directly in the container.
