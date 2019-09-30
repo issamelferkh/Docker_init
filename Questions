@@ -1,23 +1,39 @@
-- Q25 Lst all services on local swarm -> ```docker service ls```: where is swarm ???
-- Q11 how to identify volume size ?
-- container vs volume vs composer vs images???
-- image VS container ???
-- Q12 --restart=on-failure:10, why 10 value?
-- Q12 is not same root pwd !!!
-- Q12 restart is not same => always vs on-failure !!!
+Part 1
+======
+- Q03 can't exe with backtick !!!!!!!!!!!!!!!!!!!!!!!!!!!
+- Q18 restart count -> docker inspect -f '{{.RestartCount}}' overlord > don't increment !!!!!!!!!!!!!!!
 
-- Q18 restart count -> docker inspect -f '{{.RestartCount}}' overlord > don't increment
-- Q19 re-faire !!!
-- Q22 re-faire !!!
+- Q23 what is overlay-type internal network ? for swarm docker
+- Q24 What is abbitmq SERVICE ? for swarm docker
 
-- ex01 how to test teamspeak client server ???
-- ex02 re-faire !!! + créer une application Rails ???
 
 - Q19 to Q34 re-faire !!!
+- Q25 Lst all services on local swarm -> ```docker service ls```: where is swarm ???
+
+- docker run VS docker pull VS docker build ?
+- container vs volume vs composer vs images???
+- image VS container ???
 
 
-docker run VS docker pull VS docker build ?
+
+Part 2
+======
+- ex01 how to test teamspeak client server ??????????????????
+- ex02 re-faire !!! + créer une application Rails ???
+- ex03
+
 
 
 docker pull --------------> image not container
 docker run ---------------> now is a container
+
+
+
+
+
+
+
+
+
+
+Docker service inspect -f "{{.Spec.TaskTemplate.ContainerSpec.Env}}" engineering-bay

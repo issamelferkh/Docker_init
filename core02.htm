@@ -1,0 +1,170 @@
+
+<h3 class="font-weight-bold mb-1">Preliminaries</h3>
+<p class="font-italic"></p>
+</div>
+<h4 class="scale-question-name">Preliminary instructions</h4>
+<p class="scale-section-guidelines">
+<br>Before you begin, be sure to check the following:<br>- Obviously, there is a repo (in the cloned git), respecting the subject<br>- No cheating, the student must be able to explain all the commands it<br>turned in.<br><br>If an item in this list is not met, this evaluation stops there.<br>Use the appropriate flag. You are encouraged to debate on the rest of<br>this evaluation, but no more marks should be applied."<br>
+</p>
+<div class="scale-question-answers">
+<div class="form-group hidden scale_team_answer_id"><div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][0][id]" type="hidden" id="scale_team_answer_id"></div></div>
+<div class="form-group hidden scale_team_answer_question_id"><div class="col-sm-10"><input class="form-control hidden" value="13830" name="[scale_team][answers_attributes][0][question_id]" type="hidden" id="scale_team_answer_question_id"></div></div>
+=======================================================================>
+</div>
+<h4 class="scale-question-name">Setting up the working environment</h4>
+<p class="scale-section-guidelines">
+<br>Verify that the following instructions work correctly (run the necessary<br>commands)<br><br>- The \"docker version\" command displays the docker and docker-machine<br>version<br>- Virtualbox is installed on the machine<br>- Symbolic links are set for the .docker and the VirtualBox VMs image<br>directories to somewhere you have space.<br>
+</p>
+<div class="scale-question-answers">
+<div class="form-group hidden scale_team_answer_id"><div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][1][id]" type="hidden" id="scale_team_answer_id"></div></div>
+<div class="form-group hidden scale_team_answer_question_id"><div class="col-sm-10"><input class="form-control hidden" value="13831" name="[scale_team][answers_attributes][1][question_id]" type="hidden" id="scale_team_answer_question_id"></div></div>
+=======================================================================>
+</div>
+</section>
+<section class="scale-section-item dancer from-down" id="section-4154">
+<div class="section-header">
+<hr>
+<h3 class="font-weight-bold mb-1">How to Docker</h3>
+<p class="font-italic"></p>
+</div>
+<h4 class="scale-question-name">Before you begin</h4>
+<p class="scale-section-guidelines">
+<br>This part is about evaluating the first part of the subject.<br>For optimization questions, you will evaluate the output by running the<br>commands in the subject.<br><br>For each command, you will have to execute it via your shell by running<br>`cat 01` or $(cat 01).<br><br>Make sure you start from scratch by removing the Char<br>virtual machine if it already exists.<br>
+</p>
+<div class="scale-question-answers">
+<div class="form-group hidden scale_team_answer_id"><div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][2][id]" type="hidden" id="scale_team_answer_id"></div></div>
+<div class="form-group hidden scale_team_answer_question_id"><div class="col-sm-10"><input class="form-control hidden" value="13832" name="[scale_team][answers_attributes][2][question_id]" type="hidden" id="scale_team_answer_question_id"></div></div>
+=======================================================================>
+</div>
+<h4 class="scale-question-name">docker-machine (01-03)</h4>
+<p class="scale-section-guidelines">
+<br>Make sure that:<br><br>  - 01: A virtual machine Char has been created with the virtualbox<br>  driver (docker-machine ls)<br><br>  - 02: You should see something like 192.168.99.xxx<br><br>  - 03: The command \"env\" in your shell displays 4 variables<br>  \"DOCKER_ *\". On the other hand, no command to assign environment<br>  variable must be present in the script, otherwise it is zero and<br>  end of the correction.<br><br>  If any of these points is false, this part is counted as false"<br>
+</p>
+<div class="scale-question-answers">
+<div class="form-group hidden scale_team_answer_id"><div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][3][id]" type="hidden" id="scale_team_answer_id"></div></div>
+<div class="form-group hidden scale_team_answer_question_id"><div class="col-sm-10"><input class="form-control hidden" value="13833" name="[scale_team][answers_attributes][3][question_id]" type="hidden" id="scale_team_answer_question_id"></div></div>
+=======================================================================>
+</div>
+<h4 class="scale-question-name">My first container (04-09)</h4>
+<p class="scale-section-guidelines">
+<br>Make sure that:<br><br>  - 04: The ``hello-world'' image is available when you enter<br>  `docker images` (without errors)<br>  &nbsp;&nbsp;<br>  - 05: A greeting message is displayed on the terminal.&nbsp;&nbsp;<br><br>  - 06: Once the container is launched, check that:&nbsp;<br>    * The name of this container is overlord (docker ps)&nbsp;&nbsp;&nbsp;&nbsp;<br>    * Port 80 of the container is well binded to port 5000 of the<br>    virtual machine (docker ps)<br>    * The command \"curl http://<char-s-ip>:5000\" returns the test<br>    page of nginx<br>    * The \"docker inspect -f\" {{.HostConfig.RestartPolicy}}<br>    \"overlord\" command returns {always ..}<br><br>  - 07: An IP address of the form \"172.X.0.X\" appears<br>  (that you can check with `docker inspect`)<br><br>  - 08: Once the Alpine container is launched, check that:<br>    * The prompt \"/ #\" is displayed<br>    * A `whoami` command  prints \"root\"<br>    * An `exit` command stops the container and bring<br>    you back to your host console<br>    * A `docker ps -a` command returns no traces of this container<br><br>  - 09: Once the debian container is launched, check that:<br>    * You are prompted \"root @ hostname: / #\"<br>    * The execution of the commands given inthe file executes<br>    * You can run the command \"git clone<br>    https://github.com/docker/docker.git\" without errors<br>    * A small program in C should be compileable and runnable<br>    in the context of the container (install vim if necessary)<br>    * A `docker ps -a` command returns no traces of this container<br><br>    If any of these points are not met, this part is counted<br>    wrong and you move to the next one<br>
+</char-s-ip></p>
+<div class="scale-question-answers">
+<div class="form-group hidden scale_team_answer_id"><div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][4][id]" type="hidden" id="scale_team_answer_id"></div></div>
+<div class="form-group hidden scale_team_answer_question_id"><div class="col-sm-10"><input class="form-control hidden" value="13834" name="[scale_team][answers_attributes][4][question_id]" type="hidden" id="scale_team_answer_question_id"></div></div>
+=======================================================================>
+</div>
+<h4 class="scale-question-name">Wordpress (10-18)</h4>
+<p class="scale-section-guidelines">
+<br>Make sure that:<br><br>  - 10-11: The volume \"hatchery\" is created, and that the command #11<br>  shows you a \"hatchery\" volume in addition to the others<br><br>  - 12-13: Once the mysql container is launched:<br> &nbsp;&nbsp; * You get back on your classic shell (only the digest of the container<br>    launched appears)<br> &nbsp; &nbsp;* Command #13 shows that MYSQL_ROOT_PASSWORD is set to \"Kerrigan\"<br>      and that MYSQL_DATABASE is set to \"zerglings\"<br>  &nbsp;&nbsp;* A `docker inspect spawning-pool` shows you that a \"hatchery\" volume<br>      is mounted on the destination \"/var/lib/mysql\" (Key \"Mounts\")<br>  &nbsp;&nbsp;* The `docker inspect -f \"{{.HostConfig.RestartPolicy}}\"<br>      spawning-pool` command returns {on-failure ..}<br>  &nbsp;&nbsp;* The command `docker exec -it spawning-pool mysql -uroot -p` asks you<br>      to enter a password<br>  &nbsp;&nbsp;* The password is \"Kerrigan\" and the command prompt mysql is visible<br>  &nbsp;&nbsp;* The SQL command \"show databases\" shows a database \"zerglings\"<br><br>  - 14: Once the wordpress container is launched:<br>  &nbsp;&nbsp;* You come back to your classic shell (only the digest of the<br>      container launched appears)<br>  &nbsp;&nbsp;* You can launch a browser and go to http://<ip-of-char>:8080, and<br>      configure Wordpress so that the db used is that of spawning-pool<br>  &nbsp;&nbsp;* Install Wordpress and verify that the app is properly installed<br><br>  - 15: Once the container phpmyadmin launched:<br>  &nbsp;&nbsp;* You come back on your classic shell (only the digest of the<br>      container launched appears)<br>  &nbsp;&nbsp;* You can launch a browser and go to http://<ip-of-char>:8081<br>  &nbsp;&nbsp;* You can access the available database on spawning-pool and<br>      verify that you have created wordpress tables<br><br>  - 16: Logs of the mysql container are displayed live<br><br>  - 17: It talks about him<br><br>  - 18: Use the command `docker exec -it overlord /bin/sh -c \"kill 1\"`,<br>  and then `docker inspect -f '{{.RestartCount}}' overlord` should be<br>  incremented of 1.<br><br>  If any of these points are not met, this part is counted<br>  wrong and you move to the next one<br>
+</ip-of-char></ip-of-char></p>
+<div class="scale-question-answers">
+<div class="form-group hidden scale_team_answer_id"><div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][5][id]" type="hidden" id="scale_team_answer_id"></div></div>
+<div class="form-group hidden scale_team_answer_question_id"><div class="col-sm-10"><input class="form-control hidden" value="13835" name="[scale_team][answers_attributes][5][question_id]" type="hidden" id="scale_team_answer_question_id"></div></div>
+=======================================================================>
+</div>
+<h4 class="scale-question-name">Abathur (19)</h4>
+<p class="scale-section-guidelines">
+<br>Execute all the exercise commands in order to set up the container.<br>The container must embed the Flask framework (pip install Flask).<br>A python script must be present in the shared folder between<br>the host and the container.<br>Launch this script from the context of the container, so accessing<br>the URL http://<char-s-ip>:3000 will display Hello World title.<br>Similarly, logs must appear on the terminal.<br><br>If any of these points are not met, this part is counted<br>wrong and you move to the next one<br>
+</char-s-ip></p>
+<div class="scale-question-answers">
+<div class="form-group hidden scale_team_answer_id"><div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][6][id]" type="hidden" id="scale_team_answer_id"></div></div>
+<div class="form-group hidden scale_team_answer_question_id"><div class="col-sm-10"><input class="form-control hidden" value="13836" name="[scale_team][answers_attributes][6][question_id]" type="hidden" id="scale_team_answer_question_id"></div></div>
+=======================================================================>
+</div>
+<h4 class="scale-question-name">The Swarm (20-30)</h4>
+<p class="scale-section-guidelines">
+<br>Make sure that:<br><br>- 20: a \"docker node ls\" displays Char in the HOSTNAME and its<br>MANAGER STATUS is Leader<br><br>- 21: Same answer as with question 01.<br><br>- 22: `docker node ls` displays Aiur in HOSTNAME and its<br>MANAGER STATUS is other than Leader<br><br>- 23: the command 23 operates.<br><br>- 24-25: Once the RabbitMQ service is launched:<br>  * Command 25 displays the \"orbital-command\" service on 1/1 replica in<br>  replicate mode on a rabbitmq: latest image<br>  * A \"docker service ps orbital-command\" shows you the service in<br>  status \"Running\"<br>  * `docker service inspect -f \"{{.Spec.TaskTemplate.ContainerSpec.Env}}\"<br>  orbital-command` gives you two environment variables that set a user<br>  and a specific password<br><br>- 26-27: Once the engineering-bay service has been launched:<br>  * A `docker service ps engineering-bay` displays well the services<br>  in status \"Running\" with 2 replicas of made<br>  * `Docker service inspect -f \"{{.Spec.TaskTemplate.ContainerSpec.Env}}\"<br>  engineering-bay` gives you two environment variables that set a user<br>  and a password to connect to the orbital-command service<br>  * The command #27 makes you scroll the logs of the 2 tasks of the<br>  service ... and shows you many zergs attacking orbital-command !!!<br><br>- 28-29: Once the marine service launched:<br>  * A `docker service ps marines` displays the services in status<br>  \"Running\" with 2 replicas<br>  * A `docker service inspect -f \" {{.Spec.TaskTemplate.ContainerSpec.Env}}\"<br>  marines` gives you two environment variables that set a user<br>  and a password that allow connection to the orbital-command service<br>  * A `docker service logs marines`shows that marines are pwning some Zergs\<br><br>- 30: A `docker service ps marines` shows the services<br>in status \"Running\" with 20 replicas. The service itself<br>is not stopped, just updated.<br><br>If any of these points are not met, this part is counted<br>wrong and you move to the next one<br>
+</p>
+<div class="scale-question-answers">
+<div class="form-group hidden scale_team_answer_id"><div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][7][id]" type="hidden" id="scale_team_answer_id"></div></div>
+<div class="form-group hidden scale_team_answer_question_id"><div class="col-sm-10"><input class="form-control hidden" value="13837" name="[scale_team][answers_attributes][7][question_id]" type="hidden" id="scale_team_answer_question_id"></div></div>
+=======================================================================>
+</div>
+<h4 class="scale-question-name">Viscera Cleanup Detail (31-34)</h4>
+<p class="scale-section-guidelines">
+<br>All commands in this part must each be one line.<br>(Check with the mighty wc -l)<br><br>Make sure that:<br><br><br>- 31: a `docker service ls` shows no service<br>- 32: a `docker ps -a` shows no container<br>- 33: a `docker images ls` shows no image<br>- 34: `docker-machine ls` shows that Aiur is definitely destroyed<br><br>If any of these points are not met, this part is counted<br>wrong and you move to the next one<br>
+</p>
+<div class="scale-question-answers">
+<div class="form-group hidden scale_team_answer_id"><div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][8][id]" type="hidden" id="scale_team_answer_id"></div></div>
+<div class="form-group hidden scale_team_answer_question_id"><div class="col-sm-10"><input class="form-control hidden" value="13838" name="[scale_team][answers_attributes][8][question_id]" type="hidden" id="scale_team_answer_question_id"></div></div>
+=======================================================================>
+</div>
+</section>
+<section class="scale-section-item dancer from-down" id="section-4155">
+<div class="section-header">
+<hr>
+<h3 class="font-weight-bold mb-1">DockerFiles</h3>
+<p class="font-italic">
+This part allows you to evaluate the second part of the subject.
+You will have to build each Dockerfile and evaluate the
+correct implementation of the application.
+You need to start fresh.
+Either you make a virtual machine, or you use Docker for Mac, your choice.
+The important thing is that a `docker ps -a' in the terminal
+shows you absolutely nothing.
+</p>
+</div>
+<h4 class="scale-question-name">Vim // Emacs</h4>
+<p class="scale-section-guidelines">
+<br>Build this dockerfile then run it.<br>Vim or Emacs must start on its own, and the editor's \"explorer\"<br>mode must show you that you are in the context of the container<br>and not your host.<br>Make the necessary tests.<br>If any of these points are not met, this part is counted wrong<br>and you move to the next one.<br>
+</p>
+<div class="scale-question-answers">
+<div class="form-group hidden scale_team_answer_id"><div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][9][id]" type="hidden" id="scale_team_answer_id"></div></div>
+<div class="form-group hidden scale_team_answer_question_id"><div class="col-sm-10"><input class="form-control hidden" value="13839" name="[scale_team][answers_attributes][9][question_id]" type="hidden" id="scale_team_answer_question_id"></div></div>
+=======================================================================>
+</div>
+<h4 class="scale-question-name">BYOTSS</h4>
+<p class="scale-section-guidelines">
+<br>Build this dockerfile then run it.<br>It must appear in the background.<br>Check that this image is not the offical docker's one, if not -42.<br>You can easily connect with a classic TeamSpeak client on it<br>(take it on the MSC if it's not installed)<br><br>If any of these points are not met, this part is counted<br>wrong and you move to the next one<br>
+</p>
+<div class="scale-question-answers">
+<div class="form-group hidden scale_team_answer_id"><div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][10][id]" type="hidden" id="scale_team_answer_id"></div></div>
+<div class="form-group hidden scale_team_answer_question_id"><div class="col-sm-10"><input class="form-control hidden" value="13840" name="[scale_team][answers_attributes][10][question_id]" type="hidden" id="scale_team_answer_question_id"></div></div>
+=======================================================================>
+</div>
+<h4 class="scale-question-name">Dockerfile in a Dockerfile... in a Dockerfile ?</h4>
+<p class="scale-section-guidelines">
+<br>Build the dockerfile and push it somewhere (Docker Hub, local registry ...).<br>Take advantage of this moment to create a blank Rails application in<br>the directory (take a container and do the necessary).<br>Copy the dockerfile of the subject, try to build and launch<br>the container with the necessary (exposed ports, detach mode ...).<br>Verify that you can access the Rails application by try accessing<br>the machine's IP through the exposed port.<br><br>If any of these points are not met, this part is counted<br>wrong and you move to the next one"<br>
+</p>
+<div class="scale-question-answers">
+<div class="form-group hidden scale_team_answer_id"><div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][11][id]" type="hidden" id="scale_team_answer_id"></div></div>
+<div class="form-group hidden scale_team_answer_question_id"><div class="col-sm-10"><input class="form-control hidden" value="13841" name="[scale_team][answers_attributes][11][question_id]" type="hidden" id="scale_team_answer_question_id"></div></div>
+=======================================================================>
+</div>
+<h4 class="scale-question-name">What does the fox say ?</h4>
+<p class="scale-section-guidelines">
+Build the dockerfile and launch it with the necessary<br>(exposed ports, detached mode ...).<br>Make sure that Gitlab is available, that you can create users<br>and repo on it and that you can push as much in HTTPS and SSH.<br><br>If any of these points are not met, this part is counted<br>wrong and you move to the next one"<br>
+</p>
+<div class="scale-question-answers">
+<div class="form-group hidden scale_team_answer_id"><div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][12][id]" type="hidden" id="scale_team_answer_id"></div></div>
+<div class="form-group hidden scale_team_answer_question_id"><div class="col-sm-10"><input class="form-control hidden" value="13842" name="[scale_team][answers_attributes][12][question_id]" type="hidden" id="scale_team_answer_question_id"></div></div>
+=======================================================================>
+</div>
+</section>
+<section class="scale-section-item dancer from-down" id="section-4156">
+<div class="section-header">
+<hr>
+<h3 class="font-weight-bold mb-1">BONUS</h3>
+<p class="font-italic">
+Bonuses must be assessed if and only if the Mandatory
+part is PERFECT. By PERFECT, we mean the mandatory is
+fully realized and it is not possible to find an error.
+Concretely, this means that if the mandatory part did
+not get ALL points during this defense, the bonuses
+must be Completely IGNORED.
+</p>
+</div>
+
+<p class="scale-section-guidelines">
+<br>It is up to you to evaluate the different dockerfiles of the<br>`02_bonus` folder.<br><br>The allocation of the points is at the discretion of the corrector.<br>
+</p>
+<div class="scale-question-answers">
+<div class="form-group hidden scale_team_answer_id"><div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][13][id]" type="hidden" id="scale_team_answer_id"></div></div>
+<div class="form-group hidden scale_team_answer_question_id"><div class="col-sm-10"><input class="form-control hidden" value="13843" name="[scale_team][answers_attributes][13][question_id]" type="hidden" id="scale_team_answer_question_id"></div></div>
+<div class="marked-title text-center">Rate it from 0 (failed) through 5 (excellent)</div>
+<input autocomplete="off" class="star-range" data-star-range="" max="5" name="[scale_team][answers_attributes][13][value]" step="1" type="range" value="0" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;"><div class="rangeslider rangeslider--horizontal" id="js-rangeslider-0"><div class="rangeslider__fill" style="width: 20px;"></div><div class="rangeslider__handle" style="left: 0px;"></div></div>
+<hr>
+</div>
+</section>
+</div>
