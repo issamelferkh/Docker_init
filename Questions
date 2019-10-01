@@ -1,26 +1,51 @@
+00 === ok (inderstand)=== `cat 00` (execute)=== corr (with a friend)=== remarque or question
 Part 1
 ======
-- Q03 can't exe with backtick !!!!!!!!!!!!!!!!!!!!!!!!!!!
-- Q18 restart count -> docker inspect -f '{{.RestartCount}}' overlord > don't increment !!!!!!!!!!!!!!!
-
-- Q23 what is overlay-type internal network ? for swarm docker
-- Q24 What is abbitmq SERVICE ? for swarm docker
-
-
-- Q19 to Q34 re-faire !!!
-- Q25 Lst all services on local swarm -> ```docker service ls```: where is swarm ???
-
-- docker run VS docker pull VS docker build ?
-- container vs volume vs composer vs images???
-- image VS container ???
+01 === ok === `cat 00`
+02 === ok === `cat 00`
+03 === ok 				=> can't exe with backtick !!!!!!!!!!!!!!!!!!!!!!!!!!!
+04 === ok === `cat 00`
+05 === ok === `cat 00`
+06 === ok === `cat 00`
+07 === ok === `cat 00`
+08 === ok === `cat 00`
+09 === ok 
+10 === ok === `cat 00` => what's a volume ???
+11 === ok === `cat 00`
+12 === ok === `cat 00` => can I don't user "--default-authentication-plugin=mysql_native_password" ???
+13 === ok === `cat 00`
+14 === ok === `cat 00`
+15 === ok === `cat 00`
+16 === ok === `cat 00`
+17 === ok === `cat 00`
+18 === ok === `cat 00` => restart count -> docker inspect -f '{{.RestartCount}}' overlord > don't increment !!!!!!!!!!!!!!!
+19 === ok
+20 === ok === `cat 00`
+21 === ok === `cat 00`
+22 === ok === `cat 00`
+23 === ok === `cat 00` => what is overlay-type internal network ? for swarm docker
+24 === ok === `cat 00` => What is abbitmq SERVICE ? for swarm docker
+25 === ok === `cat 00`
+26 === ok === `cat 00`
+27 === ok === `cat 00`
+28 === ok === `cat 00`
+29 === ok === `cat 00`
+30 === ok === `cat 00`
+31 === ok === `cat 00`
+32 === ok === `cat 00`
+33 === ok === `cat 00`
+34 === ok === `cat 00`
 
 
 
 Part 2
 ======
-- ex01 how to test teamspeak client server ??????????????????
-- ex02 re-faire !!! + créer une application Rails ???
-- ex03
+EX00
+EX01 how to test teamspeak client server ??????????????????
+EX02 re-faire !!! + créer une application Rails ???
+EX03
+
+
 
 
 
@@ -31,9 +56,3 @@ docker run ---------------> now is a container
 
 
 
-
-
-
-
-
-Docker service inspect -f "{{.Spec.TaskTemplate.ContainerSpec.Env}}" engineering-bay
