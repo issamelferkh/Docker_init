@@ -22,7 +22,7 @@ Part 1
 19 === ok
 20 === ok === `cat 00`
 21 === ok === `cat 00`
-22 === ok === `cat 00`
+22 === ok === `cat 00` => why 2377
 23 === ok === `cat 00` => what is overlay-type internal network ? for swarm docker
 24 === ok === `cat 00` => What is abbitmq SERVICE ? for swarm docker
 25 === ok === `cat 00`
@@ -40,7 +40,7 @@ Part 1
 
 Part 2
 ======
-EX00
+EX00 : how to rename a file in vim (ENTRYPOINT in Dockerfile) ? 
 EX01 how to test teamspeak client server ??????????????????
 EX02 re-faire !!! + créer une application Rails ???
 EX03
