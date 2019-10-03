@@ -18,14 +18,14 @@ WORKDIR teamspeak3-server_linux_amd64
 
 ENTRYPOINT sh ts3server_minimal_runscript.sh
 
+# 9987 default voice
+# 10011 server query
+# 30033 file transport
+
 # To build it.
 # docker build -t ex01:1.0 .
 
 # To run it?
-# docker run --rm -p 9987:9987/udp -p 10011:10011/tcp -p 30033:30033/tcp $(docker images -q ex01)
+# docker run --rm -it -p 9987:9987/udp -p 10011:10011/tcp -p 30033:30033/tcp $(docker images -q ex01)
 
-
-# docker build -t ex01 .
-#docker run -it -p 9987:9987/udp -p 10011:10011 -p 30033:30033 --name ts3-server ex01
-
-
+# To connect with an other user ?

@@ -1,22 +1,50 @@
-FROM ubuntu:16.04
+FROM ubuntu:latest
+RUN apt-get update  && apt-get upgrade -y &&\
+	DEBIAN_FRONTEND=noninteractive apt-get install apt-utils apt-transport-https curl openssh-server ca-certificates postfix -y && \
+	DEBIAN_FRONTEND=noninteractive curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | bash && \
+	DEBIAN_FRONTEND=noninteractive apt-get install -y gitlab-ce && \
+	DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
 
-MAINTAINER iel-ferk <issam.elferkh@gmail.com>
+WORKDIR /etc/gitlab
+RUN sed -i '13s/http:\/\/gitlab.example.com/https:\/\/192.168.99.100/' gitlab.rb && \
+	echo "nginx['enable'] = true" >> gitlab.rb && \
+	echo "nginx['redirect_http_to_https'] = true" >> gitlab.rb && \
+	echo "nginx['redirect_http_to_https_port'] = 80" >> gitlab.rb && \
+	echo "nginx['ssl_certificate'] = '/etc/gitlab/ssl/gitlab.crt'" >> gitlab.rb && \
+	echo "nginx['ssl_certificate_key'] = '/etc/gitlab/ssl/gitlab.key'" >> gitlab.rb && \
+	echo "gitlab_rails['gitlab_shell_ssh_port'] = 2222" >> gitlab.rb && \
+	echo "Port 2222" >> /etc/ssh/sshd_config
 
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y ca-certificates openssh-server wget postfix
+WORKDIR /
+RUN echo "/opt/gitlab/embedded/bin/runsvdir-start& gitlab-ctl reconfigure" > start.sh && \
+	echo "service ssh restart" >> start.sh && \
+	echo "echo 'Done!'" >> start.sh && \
+	echo "tail -f /dev/null" >> start.sh && \
+	chmod 777 start.sh
 
-RUN wget https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh && chmod 777 script.deb.sh && ./script.deb.sh && apt-get install -y gitlab-ce
+EXPOSE 80 443 2222
+CMD ["sh", "start.sh"]
 
-RUN apt update && apt install -y tzdata && \
-  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-EXPOSE 443 80 22
-
-ENTRYPOINT (/opt/gitlab/embedded/bin/runsvdir-start &) && gitlab-ctl reconfigure && tail -f /dev/null
-
-# How to build it?
+# To build it?
 # docker build -t ex03:1.0 .
 
-# How to run it?
-# docker run -it --rm -p 8080:80 -p 8022:22 -p 8443:443 --privileged $(docker images -q ex03)
+# To run it?
+# docker run -it --rm --privileged -p 80:80 -p 443:443 -p 2222:2222 $(docker images -q ex03)
+
+# Test
+# open https://(docker-machine ip Char):443
+
+# Clone HTTPS
+# env GIT_SSL_NO_VERIFY=true git clone https://(docker-machine ip Char):443/<repo>.git
+
+# Push HTTPS
+# env GIT_SSL_NO_VERIFY=true git push
+
+# Clone SSH ?
+# ssh-keygen -t ed25519 -C 'root@gitlab.com' -f id_ed25519
+# pbcopy < id_ed25519.pub
+# ssh -T -i id_ed25519 -p 8022 git@(docker-machine ip Char)
+# env GIT_SSH_COMMAND='ssh -i id_ed25519 -p 8022' git clone git@(docker-machine ip Char):root/<repo>.git
+
+# Push SSH ?
+# env GIT_SSH_COMMAND='ssh -i ../id_ed25519 -p 8022' git push
