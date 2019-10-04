@@ -1,19 +1,9 @@
-# debian version for WEB devlopment
+#devlopment env for python
+FROM debian:latest
 
-From debian:latest
+RUN apt-get update && apt-get upgrade -y && \
+	apt-get install vim git curl python3 python3-pip python3-dev -y && \
+	mkdir /root/apps
 
-MAINTAINER iel-ferk <issam.elferkh@gmail.com>
-
-EXPOSE 80
-
-RUN apt-get update -y
-RUN apt-get upgrade -y
-RUN apt-get install -y vim
-RUN apt-get install -y apache2
-CMD /etc/init.d/apache2 restart
-
-# To build it
-# docker build -t bonus02:1.0 .
-
-# To run it
-# docker run -it --rm  -p 80:80 $(docker images -q bonus02)
+WORKDIR /root/apps
+ENTRYPOINT ["bash"]

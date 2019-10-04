@@ -13,7 +13,7 @@ RUN apt-get install -y build-essential git
 ENTRYPOINT ["bash"]
 
 # To build it
-# docker build -t bonus01:1.0 .
+# docker build -t b01 .
 
 # To run it
-# docker run -it --rm $(docker images -q bonus01)
+# docker run -it --rm $(docker images -q b01)

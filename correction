@@ -1,5 +1,6 @@
 Q9: for run an interactive shell of debian ```docker run -it --rm debian /bin/bash```
 
+- docker system prune -a => clean Docker 
 
 ## DockerFiles
 
