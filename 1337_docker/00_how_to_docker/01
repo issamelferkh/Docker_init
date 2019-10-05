@@ -1,0 +1,1 @@
+eval docker-machine create --driver virtualbox --virtualbox-memory "2048" Char
